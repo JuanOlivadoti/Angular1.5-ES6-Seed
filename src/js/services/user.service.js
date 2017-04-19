@@ -15,7 +15,7 @@ export default class User {
       url: this._AppConstants.api + '/users' + route,
       method: 'POST',
       data: {
-        user: credentrials
+        user: credentials
       }
     }).then(
       (res) => {
