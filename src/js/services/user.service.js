@@ -52,10 +52,10 @@ export default class User {
     } else {
       this._$http({
         url: this._AppConstants.api + '/user',
-        method: 'GET',
+        method: 'GET'/*,
         headers: {
           Authorization: 'Token ' + this._JWT.get()
-        }
+        }*/
       }).then(
         (res) => {
           this.current = res.data.user;
@@ -67,6 +67,23 @@ export default class User {
         }
       )
     }
+    return deferred.promise;
+  }
+
+  ensureAuthIs(bool) {
+    let deferred = this._$q.defer();
+
+    this.verifyAuth().then((authValid) => {
+
+      // if it's the opposite, redirect home
+      if (authValid !== bool) {
+        this._$state.go('app.home')
+        deferred.resolve(false);
+      } else {
+        deferred.resolve(false);
+      }
+    })
+
     return deferred.promise;
   }
 }
