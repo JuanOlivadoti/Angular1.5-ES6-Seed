@@ -4,7 +4,9 @@ import angular from 'angular';
 let servicesModule = angular.module('app.services', []);
 
 import UserService from './user.service';
+import JwtService from './jwt.service';
 
 export default servicesModule
   .service('User', UserService)
+  .service('JWT', JwtService)
   .name;
