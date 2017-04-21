@@ -17,7 +17,7 @@ export default class Profile {
   //Follow a user
   follow(username) {
     return this._$http({
-      url: this._$AppConstants.api + '/profiles/' + username + '/follow',
+      url: this._AppConstants.api + '/profiles/' + username + '/follow',
       method: 'POST'
     }).then((res) => res.data)
   }
@@ -25,7 +25,7 @@ export default class Profile {
   //Unfollow a user
   unfollow(username) {
     return this._$http({
-      url: this._$AppConstants.api + '/profiles/' + username + '/follow',
+      url: this._AppConstants.api + '/profiles/' + username + '/follow',
       method: 'DELETE'
     }).then((res) => res.data)
   }

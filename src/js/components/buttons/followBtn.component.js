@@ -22,6 +22,8 @@ class FollowBtnCtrl {
           this.isSubmitting = false;
           this.user.following = false;
         })
+
+    //Otherwise, follow them
     } else {
       this._Profile.follow(this.user.username)
         .then(() => {
@@ -33,12 +35,10 @@ class FollowBtnCtrl {
   }
 }
 
-let FollowBtn = {
+export default {
   bindings: {
     user: '='
   },
   controller: FollowBtnCtrl,
   templateUrl: 'components/buttons/followBtn.html'
 };
-
-export default FollowBtn;
