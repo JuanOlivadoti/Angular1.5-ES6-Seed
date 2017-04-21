@@ -69,7 +69,7 @@
           ui-sref-active="active"
           ui-sref="app.profile({ username: $ctrl.currentUser.username})">
           <img ng-src="{{ $ctrl.currentUser.image }}" class="user-pic">
-          {{ $ctrl.currentUser.username }}
+          @{{ $ctrl.currentUser.username }}
         </a>
       </li>
 
