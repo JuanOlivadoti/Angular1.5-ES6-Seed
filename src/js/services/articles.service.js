@@ -19,5 +19,13 @@ export default class Articles {
     return this._$http(request).then((res) => res.data.article);
   }
 
+  get(slug){
+    return this._$http({
+      url: `${this._AppConstants}/articles/${slug}`,
+      method: 'GET'
+    }).then(
+      (res) => res.data.article
+    );
+  }
 
 }
