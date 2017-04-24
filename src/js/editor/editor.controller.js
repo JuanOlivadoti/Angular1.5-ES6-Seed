@@ -1,5 +1,5 @@
 class EditorCtrl {
-  constructor(Articles, $state){
+  constructor(Articles, $state) {
     'ngInject';
 
     this._Articles = Articles;
@@ -13,19 +13,18 @@ class EditorCtrl {
     }
 
   }
-
-  submit(){
+  submit() {
     this.isSubmitting = true;
-    this._Articles.save(this.article)
-      .then(
-        (newArticle) => {
-          this._$state.go('app.article', { slug: newArticle.slug });
-        },
-        (err) => {
-          this.isSubmitting = false;
-          this.errors = err.data.errors;
-        }
-      )
+
+    this._Articles.save(this.article).then(
+      (newArticle) => {
+        this._$state.go('app.article', { slug: newArticle.slug });
+      },
+      (err) => {
+        this.isSubmitting = false;
+        this.errors = err.data.errors;
+      }
+    );
   }
 
   addTag(){

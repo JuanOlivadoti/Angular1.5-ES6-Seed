@@ -4,14 +4,20 @@ export default class Articles {
 
     this._AppConstants = AppConstants;
     this._$http = $http;
+
+
   }
 
-  save(article){
+  // Creates an article
+  save(article) {
     let request = {
       url: `${this._AppConstants.api}/articles`,
       method: 'POST',
       data: { article: article }
-    }
-    return this._$http(request).then((res) => res.data.article)
+    };
+
+    return this._$http(request).then((res) => res.data.article);
   }
+
+
 }
