@@ -5,12 +5,14 @@ let articleModule = angular.module('app.article', []);
 
 // Include our UI-Router config settings
 import ArticleConfig from './article.config';
-articleModule.config(ArticleConfig);
-
 
 // Controllers
 import ArticleCtrl from './article.controller';
-articleModule.controller('ArticleCtrl', ArticleCtrl);
 
+// Component
+import ArticleActions from './article-actions.component';
 
-export default articleModule;
+export default articleModule
+  .config(ArticleConfig)
+  .controller('ArticleCtrl', ArticleCtrl)
+  .component('articleActions', ArticleActions)

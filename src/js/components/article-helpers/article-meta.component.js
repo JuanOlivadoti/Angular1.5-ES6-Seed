@@ -1,4 +1,4 @@
-export default ArticleMeta = {
+ let ArticleMeta = {
   bindings: {
     article: '='
   },
@@ -6,3 +6,4 @@ export default ArticleMeta = {
   templateUrl: 'components/article-helpers/article-meta.html'
 };
 
+export default ArticleMeta;
