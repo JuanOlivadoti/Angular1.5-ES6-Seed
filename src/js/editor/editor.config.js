@@ -15,7 +15,7 @@ function EditorConfig($stateProvider) {
       article: function (Articles, User, $state, $stateParams) {
 
         // If we're trying to edit an article
-        if ($steteParams.slug) {
+        if ($stateParams.slug) {
           return Articles.get($stateParams.slug)
             .then((article) => {
         // If the current user is the author, resolve the article data
