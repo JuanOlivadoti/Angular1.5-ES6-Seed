@@ -33,8 +33,8 @@ class ArticleCtrl {
 
     this._Comments.add(this.article.slug, this.commentForm.body).then(
       (comment) => {
-        control.log(comment);
-        this.resetCommnetForm();
+        console.log(comment);
+        this.resetCommentForm();
       },
       (err) => {
         this.commentForm.isSubmitting = false;
