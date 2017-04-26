@@ -7,10 +7,12 @@ import UserService from './user.service';
 import JwtService from './jwt.service';
 import ProfileService from './profile.service';
 import ArticlesService from './articles.service';
+import CommentsService from './comments.service';
 
 export default servicesModule
   .service('User', UserService)
   .service('JWT', JwtService)
   .service('Profile', ProfileService)
   .service('Articles', ArticlesService)
+  .service('Comments', CommentsService)
   .name;
