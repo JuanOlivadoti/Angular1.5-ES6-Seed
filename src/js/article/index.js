@@ -16,3 +16,4 @@ export default articleModule
   .config(ArticleConfig)
   .controller('ArticleCtrl', ArticleCtrl)
   .component('articleActions', ArticleActions)
+  .name;

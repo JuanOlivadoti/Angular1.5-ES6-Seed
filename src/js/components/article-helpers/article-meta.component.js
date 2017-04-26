@@ -1,4 +1,4 @@
- let ArticleMeta = {
+let ArticleMeta= {
   bindings: {
     article: '='
   },
