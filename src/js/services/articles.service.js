@@ -48,4 +48,28 @@ export default class Articles {
     return deferred.promise;
   }
 
+  //Delete article
+  destroy(slug){
+    return this._$http({
+      url: `${this._AppConstants.api}/articles/${slug}`,
+      method: 'DELETE'
+    })
+  }
+
+  // Favorite an article
+  favoriteArticle(slug){
+    return this._$http({
+      url: `${this._AppConstants.api}/articles/${slug}/favorite`,
+      method: 'POST'
+    })
+  }
+
+  // Unfavorite an article
+  unfavoriteArticle(slug){
+    return this._$http({
+      url: `${this._AppConstants.api}/articles/${slug}/favorite`,
+      method: 'DELETE'
+    })
+  }
+
 }

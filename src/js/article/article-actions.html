@@ -8,7 +8,9 @@
       <i class="ion-edit"></i> Edit Article
     </a>
 
-    <button class="btn btn-outline-danger btn-sm">
+    <button class="btn btn-outline-danger btn-sm"
+      ng-class="{ disabled: $ctrl.isDeleting}"
+      ng-click="$ctrl.deleteArticle()">
       <i class="ion-trash-a"></i> Delete Article
     </button>
 
@@ -16,16 +18,9 @@
 
   <!-- Otherwise, show favorite & follow buttons -->
   <span ng-hide="$ctrl.canModify">
-    <button class="btn btn-sm btn-outline-secondary">
-      <i class="ion-plus-round"></i>
-      &nbsp;
-      Follow Brad Green
-    </button>
-    &nbsp;
-    <button class="btn btn-sm btn-outline-primary">
-      <i class="ion-heart"></i>
-      &nbsp;
-      Favorite Article <span class="counter">(29)</span>
+    <follow-btn user="$ctrl.article.author"></follow-btn>
+    <favorite-btn article="$ctrl.article">
+      {{ $ctrl.article.favorited ? 'Unfavorite' : 'Favorite'}} Article <span class="counter"> ({{ $ctrl.article.favoritesCount }}) </span>
     </button>
   </span>
 </article-meta>
