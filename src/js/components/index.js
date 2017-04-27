@@ -12,6 +12,7 @@ import FavoriteBtn from './buttons/favoriteBtn.component';
 import ArticleMeta from './article-helpers/article-meta.component';
 import ArticlePreview from './article-helpers/article-preview.component';
 import ArticleList from './article-helpers/article-list.component';
+import ListPagination from './article-helpers/list-pagination.component';
 
 export default componentsModule
   //Directive
@@ -23,4 +24,5 @@ export default componentsModule
   .component('articleMeta', ArticleMeta)
   .component('articlePreview', ArticlePreview)
   .component('articleList', ArticleList)
+  .component('listPagination', ListPagination)
   .name;
