@@ -4,9 +4,7 @@ class ArticleListCtrl {
 
     this._Articles = Articles;
 
-    $scope.$on('setPageTo', (ev, pageNumber) => {
-      this.setPageTo(pageNumber);
-    })
+    this.$scope = $scope;
 
   }
 
@@ -14,6 +12,13 @@ class ArticleListCtrl {
 
     this.setListTo(this.listConfig);
 
+    this.$scope.$on('setListTo', (ev, newList) => {
+      this.setListTo(newList);
+    })
+
+    this.$scope.$on('setPageTo', (ev, pageNumber) => {
+      this.setPageTo(pageNumber);
+    })
 
   }
 

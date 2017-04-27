@@ -8,6 +8,7 @@ import JwtService from './jwt.service';
 import ProfileService from './profile.service';
 import ArticlesService from './articles.service';
 import CommentsService from './comments.service';
+import Tags from './tags.service';
 
 export default servicesModule
   .service('User', UserService)
@@ -15,4 +16,5 @@ export default servicesModule
   .service('Profile', ProfileService)
   .service('Articles', ArticlesService)
   .service('Comments', CommentsService)
+  .service('Tags', Tags)
   .name;
