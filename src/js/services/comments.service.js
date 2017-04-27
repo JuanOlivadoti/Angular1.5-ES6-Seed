@@ -16,4 +16,19 @@ export default class Comments {
 
   }
 
+  delete(commentId, articleSlug){
+    return this._$http({
+      url: `${this._AppConstants.api}/articles/${articleSlug}/comments/${commentId}`,
+      method: 'DELETE'
+    });
+
+  }
+
+  getAll(slug) {
+    return this._$http({
+      url: `${this._AppConstants.api}/articles/${slug}/comments`,
+      method: 'GET'
+    }).then((res) => res.data.comments)
+  }
+
 }

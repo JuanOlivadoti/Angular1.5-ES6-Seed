@@ -30,7 +30,7 @@ let ArticleActions = {
     article: '='
   },
   controller: ArticleActionsCtrl,
-  templateUrl: 'article/article-actions.html'
+  templateUrl: 'article/components/article-actions.html'
 };
 
 export default ArticleActions;

@@ -18,6 +18,11 @@ class ArticleCtrl {
     // Initialize blank comment form
     this.resetCommentForm();
 
+    //Get all comments
+    Comments.getAll(this.article.slug).then(
+      (comments) => this.comments = comments
+    )
+
   }
 
   resetCommentForm() {
@@ -34,6 +39,7 @@ class ArticleCtrl {
     this._Comments.add(this.article.slug, this.commentForm.body).then(
       (comment) => {
         console.log(comment);
+        this.comments.unshift(comment);
         this.resetCommentForm();
       },
       (err) => {
@@ -42,6 +48,15 @@ class ArticleCtrl {
       }
     )
   }
+
+  deleteComment(commentId, index) {
+    this._Comments.delete(commentId, this.article.slug).then(
+      (success) => {
+        this.comments.splice(index, 1);
+      }
+    )
+  }
+
 }
 
 

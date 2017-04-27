@@ -10,10 +10,12 @@ import ArticleConfig from './article.config';
 import ArticleCtrl from './article.controller';
 
 // Component
-import ArticleActions from './article-actions.component';
+import ArticleActions from './components/article-actions.component';
+import Comment from './components/comment.component';
 
 export default articleModule
   .config(ArticleConfig)
   .controller('ArticleCtrl', ArticleCtrl)
   .component('articleActions', ArticleActions)
+  .component('comment', Comment)
   .name;
