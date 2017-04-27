@@ -1,7 +1,8 @@
 class ListPaginationCtrl {
-  constructor() {
+  constructor($scope) {
     'ngInject';
 
+    this._$scope = $scope;
   }
 
   pageRange(total) {
@@ -12,6 +13,10 @@ class ListPaginationCtrl {
     }
 
     return pages;
+  }
+
+  changePage(number){
+    this._$scope.$emit('setPageTo', number)
   }
 }
 
