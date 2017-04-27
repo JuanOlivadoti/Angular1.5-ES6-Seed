@@ -26,7 +26,7 @@ class SettingsCtrl {
       .then(
         (user) => {
           console.log('updated!');
-          this._$state.go('app.profile', { username: user.username });
+          this._$state.go('app.profile.main', { username: user.username });
         },
         (err) => {
           this.isSubmitting = false;

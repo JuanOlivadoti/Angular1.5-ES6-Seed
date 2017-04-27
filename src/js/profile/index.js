@@ -5,11 +5,14 @@ let profileModule = angular.module('app.profile', []);
 
 // Include our UI-Router config settings
 import ProfileConfig from './profile.config';
-profileModule.config(ProfileConfig);
 
 // Controllers
 import ProfileCtrl from './profile.controller';
-profileModule.controller('ProfileCtrl', ProfileCtrl);
+import ProfileArticlesCtrl from './components/profile-articles.controller';
 
 
-export default profileModule;
+export default profileModule
+  .config(ProfileConfig)
+  .controller('ProfileCtrl', ProfileCtrl)
+  .controller('ProfileArticlesCtrl', ProfileArticlesCtrl)
+  .name;
